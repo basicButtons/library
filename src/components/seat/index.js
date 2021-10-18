@@ -13,7 +13,9 @@ export default class index extends Component {
     componentDidMount(){
         let info = localStorage.getItem("seat")
         let infoJson = JSON.parse(info)
-        this.setState({"float":infoJson.float,"seat":infoJson.seat,"time":infoJson.time,"area":infoJson.area})
+        if(infoJson){
+            this.setState({"float":infoJson.float,"seat":infoJson.seat,"time":infoJson.time,"area":infoJson.area})
+        }
     }
     render() {
         return (
