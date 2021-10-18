@@ -1,0 +1,40 @@
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em auto;
+    padding: 0;
+    width: 60%;
+  }
+  .seat-wrap{
+      position: relative;
+      height: 100%;
+  }
+  .button_center{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .empty-btn{
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  .choose-btn{
+      background-color: rgb(128,216,207);
+      color: aliceblue;
+  }
+  .choose-link{
+      color: rgb(128,216,207);
+  }
+  .showinfo{
+    margin: auto;
+    width: 60%;
+  }
+  .info-title{
+      font-size: 1.2rem;
+      font-weight: 600;
+  }

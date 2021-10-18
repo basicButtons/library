@@ -1,0 +1,25 @@
+.recode-wrap{
+    height: 100%;
+}
+.carousel-item{
+    width: 100%;
+}
+.recode-inner-wrapper{
+    height: 100%;
+}
+.carousel-item-self{
+    height: calc(100vh - 3.17rem);
+    position: relative;
+    /* background-color: rgb(119,119,119); */
+}
+.table-wraper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 90vw;
+    color: white;
+}
+.arrow{
+    background-color: rgb(119,119,119);
+}

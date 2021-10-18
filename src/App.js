@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import {HashRouter,Route,Switch } from 'react-router-dom';
+import Nav from "./components/nav"
+import Seat from "./components/seat"
+import Recode from "./components/recode"
+import Book from "./components/book"
 import './App.css';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <Nav>
+        </Nav>
+      </div>
+      <div className="body">
+          <Switch>
+            <Route exact path="/seat" component={Seat}/>
+            <Route exact path="/seat/recode" component={Recode}/>
+            <Route exact path="/book" component={Book}/>
+          </Switch>
+      </div>
     </div>
   );
 }
