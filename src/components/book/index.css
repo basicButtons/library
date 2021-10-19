@@ -1,0 +1,15 @@
+.d-flex{
+    margin: 0.5rem 0.5rem;
+}
+.book-table{
+    width: 100%;
+    
+}
+.book-wraper{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.6rem);
+}
+.book-table{
+    flex: 1;
+}

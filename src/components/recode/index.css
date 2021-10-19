@@ -8,7 +8,7 @@
     height: 100%;
 }
 .carousel-item-self{
-    height: calc(100vh - 3.17rem);
+    height: calc(100vh - 3.6rem);
     position: relative;
     /* background-color: rgb(119,119,119); */
 }
