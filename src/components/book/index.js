@@ -1,97 +1,125 @@
 import React, { Component } from 'react'
-import { Table, Tag, Space, Pagination } from 'antd';
+import { Table, Tag, Space, Button } from 'antd';
+import {Link} from "react-router-dom"
 import "./index.css"
 
 export default class index extends Component {
     state = {
         isLoading:false,
-        books:[
-            {
-                name:"前端开发核心知识进阶",
-                place:"一排二列"
-            }
+        data : [
+          {
+            key: '1',
+            name: 'You don\'t know JavaScript',
+            author: "Kyle Simpson",
+            press: '机械工业出版社',
+            number:2
+          },
+          {
+            key: '2',
+            name: '了不起的Node.js',
+            author: "Cuillermo Rauch",
+            press: '电子工业出版社',
+            number:3
+          },
+          {
+            key: '3',
+            name: '联邦学习',
+            author: "杨强",
+            press:"电子工业出版社",
+            number:3
+          },
+          {
+              key: '4',
+              name: '穷查理宝典',
+              author: "彼得·考夫曼",
+              press: '中信出版社',
+              number: 2
+          },
+          {
+              key: '5',
+              name: 'Vscode 权威指南',
+              author: "韩俊",
+              press: '中国工信出版社',
+              number: 2
+          }
         ]
     }
+    other =  [
+      {
+        key: '1',
+        name: 'You don\'t know JavaScript',
+        author: "Kyle Simpson",
+        press: '机械工业出版社',
+        number:2
+      },
+      {
+        key: '2',
+        name: '了不起的Node.js',
+        author: "Cuillermo Rauch",
+        press: '电子工业出版社',
+        number:3
+      },
+      {
+        key: '3',
+        name: '联邦学习',
+        author: "杨强",
+        press:"电子工业出版社",
+        number:3
+      },
+      {
+          key: '4',
+          name: '穷查理宝典',
+          author: "彼得·考夫曼",
+          press: '中信出版社',
+          number: 2
+      }
+      ,
+      {
+          key: '5',
+          name: 'Vscode 权威指南',
+          author: "韩俊",
+          press: '中国工信出版社',
+          number: 2
+      }
+    ]
     searchRef = React.createRef()
     search=(e)=>{
         e.preventDefault()
         let value = this.searchRef.current.value
-        // console.log(value)
-        let result = this.state.books.filter(item => item.name.indexOf(value) >= 0)
+        console.log(value)
+        let result = this.other.filter(item => item.name.indexOf(value) >= 0)
+        this.setState({data:result})
         console.log(result)
-
     }
     
     render() {
         const columns = [
             {
-              title: 'Name',
+              title: '书名',
               dataIndex: 'name',
               key: 'name',
               render: text => <a>{text}</a>,
             },
             {
-              title: 'Age',
-              dataIndex: 'age',
-              key: 'age',
+              title: '作者',
+              dataIndex: 'author',
+              key: 'author',
             },
             {
-              title: 'Address',
-              dataIndex: 'address',
-              key: 'address',
+              title: '出版社',
+              dataIndex: 'press',
+              key: 'press',
             },
             {
-              title: 'Action',
-              key: 'action',
-              render: (text, record) => (
-                <Space size="middle">
-                  <a>Invite {record.name}</a>
-                  <a>Delete</a>
-                </Space>
-              ),
-            },
-          ];
-          
-          const data = [
-            {
-              key: '1',
-              name: 'John Brown',
-              age: 32,
-              address: 'New York No. 1 Lake Park',
-              tags: ['nice', 'developer'],
-            },
-            {
-              key: '2',
-              name: 'Jim Green',
-              age: 42,
-              address: 'London No. 1 Lake Park',
-              tags: ['loser'],
-            },
-            {
-              key: '3',
-              name: 'Joe Black',
-              age: 32,
-              address: 'Sidney No. 1 Lake Park',
-              tags: ['cool', 'teacher'],
-            },
-            {
-                key: '4',
-                name: 'John Brown',
-                age: 32,
-                address: 'New York No. 1 Lake Park',
-                tags: ['nice', 'developer'],
-            },
-            {
-                key: '5',
-                name: 'John Brown',
-                age: 32,
-                address: 'New York No. 1 Lake Park',
-                tags: ['nice', 'developer'],
+              title: '库存数量',
+              key: 'number',
+              dataIndex: 'number',
             },
           ];
           let pagination = {
               pageSize : 4
           }
+
         return (
             <div className="book-wraper">
                 <form className="d-flex">
@@ -99,8 +127,12 @@ export default class index extends Component {
                     <button className="btn btn-outline-success" onClick={this.search}>Search</button>
                 </form>
                 <div className="display book-table" >
-                    <Table  columns={columns} dataSource={data} pagination = {pagination} />
+                    <Table  columns={columns} dataSource={this.state.data} pagination = {pagination} />
+                    <button type="button" className="btn btn-link wish-link">
+                      <Link to="/book/wish">愿望书单</Link>
+                    </button>
                 </div>
+                
             </div>
         )
     }
