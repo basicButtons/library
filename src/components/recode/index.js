@@ -13,12 +13,14 @@ export default class index extends Component {
                         <div className="carousel-item active carousel-item-self">
                             <div className="table-wraper">
                                 <Row gutter={16}>
-                                    <Col span={12}>
-                                    <Statistic title="过去一年内您一共来图书馆（次）" value={112893} />
-                                    </Col>
-                                    <Col span={12}>
+                                    <div className="count">
+                                        <Col span={36}>
+                                        <Statistic title="过去一年内您一共来图书馆（次）" value={112} />
+                                        </Col>
+                                    </div>
+                                    {/* <Col span={12}>
                                     <Statistic title="过去一年内您一共借阅图书量 (本)" value={112893} precision={0} />
-                                    </Col>
+                                    </Col> */}
                                     {/* <Col span={12}>
                                     <Statistic title="Active Users" value={112893} loading />
                                     </Col> */}

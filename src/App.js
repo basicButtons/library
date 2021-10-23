@@ -6,6 +6,7 @@ import Book from "./components/book"
 import Room from "./components/room"
 import BookWish from "./components/bookwish"
 import Login from "./components/login"
+import Credit from "./components/credit"
 import classNames from 'classnames';
 import { useState } from 'react';
 import './App.css';
@@ -19,7 +20,7 @@ function App() {
         hidden:hidden
       })}>
         <div className="login-box">
-          <Login></Login>
+          <Login close = {setHidden}></Login>
         </div>
       </div>
       <div className="header">
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/seat/recode" component={Recode}/>
             <Route exact path="/book" component={Book}/>
             <Route exact path="/book/wish" component={BookWish}/>
+            <Route exact path="/credit" component={Credit}/>
           </Switch>
       </div>
     </div>

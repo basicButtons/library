@@ -1,6 +1,9 @@
 
 body{
   font-size: 18px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 .App {
   text-align: center;
@@ -8,7 +11,6 @@ body{
   display: flex;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
-  overflow: hidden;
 }
 
 .App-logo {
@@ -67,4 +69,7 @@ body{
 }
 .hidden{
   display: none;
+}
+.count{
+  margin: auto;
 }

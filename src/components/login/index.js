@@ -1,8 +1,16 @@
 import { Form, Input, Button, Checkbox } from 'antd';
-
-const Demo = () => {
+import {withRouter} from "react-router-dom"
+import { useState } from 'react';
+const Demo = (props) => {
+    let [error,setError] = useState("")
+    let close = props.close
   const onFinish = (values) => {
-    console.log('Success:', values);
+      if(values.username === "1" && values.password === "1"){
+        close(true)
+        props.history.push("/seat")
+      }else{
+        setError("error")
+      }
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -20,7 +28,7 @@ const Demo = () => {
       autoComplete="off"
     >
       <Form.Item
-        label="Username"
+        label="学号"
         name="username"
         rules={[{ required: true, message: 'Please input your username!' }]}
       >
@@ -28,9 +36,10 @@ const Demo = () => {
       </Form.Item>
 
       <Form.Item
-        label="Password"
+        label="密码"
         name="password"
         rules={[{ required: true, message: 'Please input your password!' }]}
+        validateStatus={error}
       >
         <Input.Password />
       </Form.Item>
@@ -43,4 +52,4 @@ const Demo = () => {
     </Form>
   );
 };
-export default Demo
+export default withRouter(Demo)
