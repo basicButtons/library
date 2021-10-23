@@ -41,9 +41,6 @@ export default function(){
             </div>
             <button className="btn choose-btn button_center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">预约座位</button>
                 <Board/>
-            <button type="button" className="btn btn-link empty-btn choose-link">
-                <Link to="/seat/recode">查看年度记录</Link>
-            </button>
         </div>
     )
     

@@ -5,14 +5,23 @@ import Recode from "./components/recode"
 import Book from "./components/book"
 import Room from "./components/room"
 import BookWish from "./components/bookwish"
+import Login from "./components/login"
+import classNames from 'classnames';
+import { useState } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 
-
-
 function App() {
+  let [hidden,setHidden] = useState(false)
   return (
     <div className="App">
+      <div className={classNames({"login":true,
+        hidden:hidden
+      })}>
+        <div className="login-box">
+          <Login></Login>
+        </div>
+      </div>
       <div className="header">
         <Nav>
         </Nav>
