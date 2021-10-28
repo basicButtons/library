@@ -5,7 +5,7 @@ const Demo = (props) => {
     let [error,setError] = useState("")
     let close = props.close
   const onFinish = (values) => {
-      if(values.username === "1" && values.password === "1"){
+      if(values.username === "1191000521" && values.name === "崔硕"){
         close(true)
         props.history.push("/seat")
       }else{
@@ -36,12 +36,12 @@ const Demo = (props) => {
       </Form.Item>
 
       <Form.Item
-        label="密码"
-        name="password"
+        label="姓名"
+        name="name"
         rules={[{ required: true, message: 'Please input your password!' }]}
         validateStatus={error}
       >
-        <Input.Password />
+        <Input />
       </Form.Item>
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
