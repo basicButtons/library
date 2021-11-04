@@ -4,8 +4,10 @@ import { useState } from 'react';
 const Demo = (props) => {
     let [error,setError] = useState("")
     let close = props.close
+    
   const onFinish = (values) => {
-      if(values.username === "1191000521" && values.name === "崔硕"){
+    // props.history.push("/seat")
+      if(values.username === "1" && values.name === "1"){
         close(true)
         props.history.push("/seat")
       }else{
